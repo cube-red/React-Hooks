@@ -9,5 +9,6 @@
 
 .table {
   display: flex;
-  background-color: #61dafb;
+  flex-direction: column;
+  gap: 20px;
 }
