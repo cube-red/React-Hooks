@@ -1,0 +1,13 @@
+.item {
+  display: flex;
+  gap: 100px;
+  flex-direction: row;
+  margin-left: 500px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.table {
+  display: flex;
+  background-color: #61dafb;
+}

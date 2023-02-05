@@ -1,19 +1,49 @@
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet
+} from "react-router-dom";
 import React from 'react'
-import { useState } from 'react'
+import Home from "./Pages/Home/Home"
+import Challenges from "./Pages/Challenges/Challenges"
+import Navbar from "./Components/Navbar/Navbar"
+import "./App.css"
 
-const App = () => {
-  const [text,setText] = useState('React Hooks');
-
-  const handleClick = () => {
-      setText('This is useState');
-  }
-
-  return (
-    <div>
-      <h1>{text}</h1>
-      <button onClick={handleClick}>Click me to change</button>
+const Layout = () => {
+  return(
+    <div className="app">
+      <Navbar />
+      <Outlet />
+      
     </div>
   )
+}
+
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element: <Layout />,
+    children:[
+      {
+        path:"/",
+        element:<Home />
+      },
+      {
+        path:"/challanges",
+        element:<Challenges />
+      }
+    ]
+  }
+])
+
+
+const App = () => {
+  return(
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  )
+  
 }
 
 export default App
