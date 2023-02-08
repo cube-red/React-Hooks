@@ -7,6 +7,7 @@ import React from 'react'
 import Home from "./Pages/Home/Home"
 import Challenges from "./Pages/Challenges/Challenges"
 import Navbar from "./Components/Navbar/Navbar"
+import Login from "./Pages/Login/Login";
 import "./App.css"
 
 const Layout = () => {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path:"/challanges",
         element:<Challenges />
+      },
+      {
+        path:"/loginform",
+        element : <Login />
       }
     ]
   }
